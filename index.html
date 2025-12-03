@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Buddy - Choose Your Version</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #4CAF50;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Budget Buddy</h1>
+            <p>Your Personal Finance Management System</p>
+        </div>
+
+        <div class="cards">
+            <div class="card" onclick="window.location.href='budget-buddy.html'">
+                <div class="badge">⭐ RECOMMENDED</div>
+                <div class="card-icon">📄</div>
+                <h2>Standalone Version</h2>
+                <p>Just open and use! No installation, no setup, works everywhere.</p>
+                <a href="budget-buddy.html" class="btn">Start Now</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🖥️</div>
+                <h2>Console Version</h2>
+                <p>Terminal-based application for developers and command-line users.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">Run: python budget_buddy.py</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <h2>Web Application</h2>
+                <p>Full Flask web server with multi-user support and RESTful API.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">Run: python app.py</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>✨ Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">💵</div>
+                    <h3>Income Tracking</h3>
+                    <p>Track multiple income sources</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💸</div>
+                    <h3>Expense Management</h3>
+                    <p>Categorized expense tracking</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <h3>Visual Reports</h3>
+                    <p>Beautiful charts and summaries</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚠️</div>
+                    <h3>Budget Alerts</h3>
+                    <p>Get notified when overspending</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💾</div>
+                    <h3>Auto-Save</h3>
+                    <p>Data saved automatically</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🔒</div>
+                    <h3>100% Private</h3>
+                    <p>All data stays on your device</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📖 Read <a href="START_HERE.md" style="color: white; text-decoration: underline;">START_HERE.md</a> for complete documentation</p>
+            <p style="margin-top: 10px;">&copy; 2025 Made with ❤️ for better financial management</p>
+        </div>
+    </div>
+</body>
+</html>
